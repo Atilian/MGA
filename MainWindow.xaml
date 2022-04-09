@@ -5,8 +5,47 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MGA"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MGA" Height="450" Width="800"
+        WindowStyle="None">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*" MaxHeight="50" MinHeight="50" />
+            <RowDefinition Height="95*" />
+        </Grid.RowDefinitions>
+        <local:NavBar SrcOptionImg="/Images/Bar/Menu.png" />
+        <Grid Grid.Row="1" Margin="30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50*" />
+                <RowDefinition Height="50*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="33*" />
+                <ColumnDefinition Width="33*" />
+                <ColumnDefinition Width="33*" />
+            </Grid.ColumnDefinitions>
+            <Button 
+                Margin="10" 
+                Background="Red" 
+                BorderThickness="0"
+                Click="Btn_Compta">
+                <Image Source="/Images/Apps/Comptabilite/Icone_Compta.png" Name="Img_Compta"/>
+            </Button>
+            <Button Margin="10" Grid.Column="1" BorderThickness="0">
+                ters
+            </Button>
+            <Button Margin="10" Grid.Column="2" BorderThickness="0">
+                ters
+            </Button>
+            <Button Margin="10" Grid.Row="1" BorderThickness="0">
+                ters
+            </Button>
+            <Button Margin="10" Grid.Row="1" Grid.Column="1" BorderThickness="0">
+                ters
+            </Button>
+            <Button Margin="10" Grid.Row="1" Grid.Column="2" BorderThickness="0">
+                ters
+            </Button>
+        </Grid>
     </Grid>
 </Window>
+    

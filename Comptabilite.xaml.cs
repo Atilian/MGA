@@ -3,21 +3,18 @@
 namespace MGA
 {
     /// <summary>
-    /// Logique d'interaction pour MainWindow.xaml
+    /// Logique d'interaction pour Comptabilite.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Comptabilite : Window
     {
-        public MainWindow()
+        public Comptabilite()
         {
             InitializeComponent();
         }
-
         private void Click_Fermer(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
-
-        
 
         private void Click_Agrandir(object sender, RoutedEventArgs e)
         {
@@ -36,10 +33,10 @@ namespace MGA
             this.WindowState = System.Windows.WindowState.Minimized;
         }
 
-        private void Btn_Compta(object sender, RoutedEventArgs e)
+        private void Btn_Menu(object sender, RoutedEventArgs e)
         {
-            Comptabilite Compta = new Comptabilite();
-            Compta.Show();
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
             this.Close();
         }
     }
