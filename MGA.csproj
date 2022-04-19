@@ -55,10 +55,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Comptabilite.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+    <Compile Include="UserControls\NavBar.xaml.cs">
+      <DependentUpon>NavBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsApps\Comptabilite\AddOperation.xaml.cs">
+      <DependentUpon>AddOperation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsApps\Comptabilite\Comptabilite.xaml.cs">
+      <DependentUpon>Comptabilite.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowsApps\Comptabilite\Operation.cs" />
+    <Compile Include="WindowsApps\Comptabilite\SearchOperation.xaml.cs">
+      <DependentUpon>SearchOperation.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -67,22 +76,28 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Comptabilite.xaml.cs">
-      <DependentUpon>Comptabilite.xaml</DependentUpon>
-    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="NavBar.xaml">
+    <Page Include="UserControls\NavBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowsApps\Comptabilite\AddOperation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowsApps\Comptabilite\Comptabilite.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowsApps\Comptabilite\SearchOperation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NavBar.xaml.cs">
-      <DependentUpon>NavBar.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -121,6 +136,20 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Apps\Comptabilite\Arriere.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Apps\Comptabilite\Editer.png" />
+    <Resource Include="Images\Apps\Comptabilite\Supprimer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\UC\Operations\Moin.png" />
+    <Resource Include="Images\UC\Operations\Plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Apps\Comptabilite\Recherche.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UserControls\Comptabilite\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

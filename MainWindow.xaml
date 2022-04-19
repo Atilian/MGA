@@ -4,15 +4,24 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MGA"
+        xmlns:uc="clr-namespace:MGA.UserControls"
         mc:Ignorable="d"
         Title="MGA" Height="450" Width="800"
         WindowStyle="None">
-    <Grid>
+    <Grid MouseDown="dragmove">
         <Grid.RowDefinitions>
             <RowDefinition Height="5*" MaxHeight="50" MinHeight="50" />
             <RowDefinition Height="95*" />
         </Grid.RowDefinitions>
-        <local:NavBar SrcOptionImg="/Images/Bar/Menu.png" />
+        <uc:NavBar />
+        <Button
+            Background="{Binding}"
+            HorizontalAlignment="Left"
+            >
+            <Image Source="/Images/Bar/Menu.png"
+                   Width="25" Height="25"  
+                   Margin="10,0,0,0" />
+        </Button>
         <Grid Grid.Row="1" Margin="30">
             <Grid.RowDefinitions>
                 <RowDefinition Height="50*" />
@@ -43,7 +52,7 @@
                 ters
             </Button>
             <Button Margin="10" Grid.Row="1" Grid.Column="2" BorderThickness="0">
-                ters
+                 ters
             </Button>
         </Grid>
     </Grid>

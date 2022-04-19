@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MGA
+namespace MGA.UserControls
 {
     /// <summary>
     /// Logique d'interaction pour NavBar.xaml
@@ -26,11 +26,31 @@ namespace MGA
         }
         public string SrcOptionImg { get; set; }
 
-        private void tt(object sender, RoutedEventArgs e)
+        private void Click_Reduire(object sender, RoutedEventArgs e)
         {
             this.DataContext = this;
             Window window = Window.GetWindow(this);
             window.WindowState = WindowState.Minimized;
+        }
+        private void Click_Agrandir(object sender, RoutedEventArgs e)
+        {
+            this.DataContext = this;
+            Window window = Window.GetWindow(this);
+            if (window.WindowState != WindowState.Maximized)
+            {
+                window.WindowState = WindowState.Maximized;
+            }
+            else
+            {
+                window.WindowState = WindowState.Normal;
+            }
+        }
+
+        private void Click_Fermer(object sender, RoutedEventArgs e)
+        {
+            this.DataContext = this;
+            Window window = Window.GetWindow(this);
+            window.Close();
         }
     }
 

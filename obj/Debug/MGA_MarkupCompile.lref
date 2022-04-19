@@ -1,6 +1,8 @@
 ﻿
 FC:\Users\Mickael\Desktop\Development\C#_WPF\MGA\App.xaml;;
-FC:\Users\Mickael\Desktop\Development\C#_WPF\MGA\Comptabilite.xaml;;
 FC:\Users\Mickael\Desktop\Development\C#_WPF\MGA\MainWindow.xaml;;
-FC:\Users\Mickael\Desktop\Development\C#_WPF\MGA\NavBar.xaml;;
+FC:\Users\Mickael\Desktop\Development\C#_WPF\MGA\UserControls\NavBar.xaml;;
+FC:\Users\Mickael\Desktop\Development\C#_WPF\MGA\WindowsApps\Comptabilite\AddOperation.xaml;;
+FC:\Users\Mickael\Desktop\Development\C#_WPF\MGA\WindowsApps\Comptabilite\Comptabilite.xaml;;
+FC:\Users\Mickael\Desktop\Development\C#_WPF\MGA\WindowsApps\Comptabilite\SearchOperation.xaml;;
 

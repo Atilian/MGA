@@ -1,0 +1,113 @@
+﻿<Window x:Class="MGA.WindowsApps.Comptabilite.Comptabilite"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MGA.WindowsApps.Comptabilite"
+        xmlns:uc="clr-namespace:MGA.UserControls"
+        mc:Ignorable="d"
+        Title="Comptabilite" Height="450" Width="800"
+        WindowStyle="None">
+    <Grid MouseDown="dragmove">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*" MaxHeight="50" MinHeight="50" />
+            <RowDefinition Height="95*" />
+        </Grid.RowDefinitions>
+        <uc:NavBar />
+        <StackPanel Orientation="Horizontal">
+            <Button
+                Background="{Binding}"
+                HorizontalAlignment="Left"
+                Click="Btn_Menu"
+                >
+                <Image Source="/Images/Apps/Comptabilite/Arriere.png"
+                       Width="25" Height="25"  
+                       Margin="10,0,10,0" />
+            </Button>
+            <TextBlock
+                Foreground="White"
+                VerticalAlignment="Center"
+                FontWeight="Bold"
+                FontSize="15"
+                FontStyle="Italic">
+                Comptabilite
+            </TextBlock>
+        </StackPanel>
+        <Grid Grid.Row="1" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="90*" />
+                <RowDefinition Height="10*" />
+            </Grid.RowDefinitions>
+            <ListBox Name="lbOperations" BorderThickness="1">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock 
+                                VerticalAlignment="Center"
+                                Width="120"
+                                HorizontalAlignment="Left"
+                                Margin="0,0,15,0"
+                                FontSize="13"
+                                FontWeight="Bold"
+                                Text="{Binding Date}" />
+                            <TextBlock 
+                                VerticalAlignment="Center"
+                                Width="150"
+                                HorizontalAlignment="Left"
+                                Margin="0,0,15,0"
+                                FontSize="13"
+                                FontWeight="Bold"
+                                Text="{Binding Libele}" />
+                            <TextBlock 
+                                VerticalAlignment="Center"
+                                Width="50"
+                                HorizontalAlignment="Left"
+                                Margin="0,0,15,0"
+                                FontSize="13"
+                                FontWeight="Bold"
+                                Text="{Binding Montant}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <StackPanel 
+                Grid.Row="1" 
+                HorizontalAlignment="Center" VerticalAlignment="Bottom" 
+                Orientation="Horizontal">
+                <Button
+                    BorderThickness="0"
+                    Width="25" Height="25"
+                    Margin="10,0,10,0"
+                    Click="SearchOperation"
+                    Background="{Binding}">
+                    <Image Source="/Images/Apps/Comptabilite/Recherche.png" />
+                </Button>
+                <Button
+                    BorderThickness="0"
+                    Width="25" Height="25"
+                    Margin="10,0,10,0"
+                    Click="EditOperation"
+                    Background="{Binding}">
+                    <Image Source="/Images/Apps/Comptabilite/Editer.png" />
+                </Button>
+                <Button
+                    BorderThickness="0"
+                    Width="35" Height="35"
+                    Margin="10,0,10,0"
+                    Click="AddOperation"
+                    Background="{Binding}">
+                    <Image Source="/Images/UC/Operations/Plus.png" />
+                </Button>
+                <Button
+                    Name="DeleteButton"                
+                    BorderThickness="0" 
+                    Width="25" Height="25" 
+                    Margin="10,0,10,0"
+                    Click="DeleteOperation"
+                    Background="{Binding}">
+                    <Image Source="/Images/Apps/Comptabilite/Supprimer.png" />
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

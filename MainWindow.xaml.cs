@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 
 namespace MGA
 {
@@ -12,35 +13,16 @@ namespace MGA
             InitializeComponent();
         }
 
-        private void Click_Fermer(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
-        
-
-        private void Click_Agrandir(object sender, RoutedEventArgs e)
-        {
-            if (this.WindowState == System.Windows.WindowState.Maximized)
-            {
-                this.WindowState = System.Windows.WindowState.Normal;
-            }
-            else
-            {
-                this.WindowState = System.Windows.WindowState.Maximized;
-            }
-        }
-
-        private void Click_Reduire(object sender, RoutedEventArgs e)
-        {
-            this.WindowState = System.Windows.WindowState.Minimized;
-        }
-
         private void Btn_Compta(object sender, RoutedEventArgs e)
         {
-            Comptabilite Compta = new Comptabilite();
-            Compta.Show();
+            WindowsApps.Comptabilite.Comptabilite compta = new WindowsApps.Comptabilite.Comptabilite();
+            compta.Show();
             this.Close();
+        }
+
+        private void dragmove(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            DragMove();
         }
     }
 }

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Mickael\Desktop\Development\C#_WPF\MGA\App.xaml
-3-423253458
+5-1403320582
 
-8-666695111
+11271889794
 13-38814620
-Comptabilite.xaml;MainWindow.xaml;NavBar.xaml;
+MainWindow.xaml;UserControls\NavBar.xaml;WindowsApps\Comptabilite\AddOperation.xaml;WindowsApps\Comptabilite\Comptabilite.xaml;WindowsApps\Comptabilite\SearchOperation.xaml;
 
-True
+False
 
