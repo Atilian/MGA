@@ -11,13 +11,16 @@ namespace MGA
         public MainWindow()
         {
             InitializeComponent();
+            Window w = new Window();
         }
 
         private void Btn_Compta(object sender, RoutedEventArgs e)
         {
             WindowsApps.Comptabilite.Comptabilite compta = new WindowsApps.Comptabilite.Comptabilite();
-            compta.Show();
+            compta.Top = this.Top;
+            compta.Left = this.Left;
             this.Close();
+            compta.ShowDialog();
         }
 
         private void dragmove(object sender, System.Windows.Input.MouseButtonEventArgs e)

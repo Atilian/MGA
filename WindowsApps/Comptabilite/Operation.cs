@@ -9,8 +9,9 @@ using System.ComponentModel;
 namespace MGA.WindowsApps.Comptabilite
 {
     internal class Operation : INotifyPropertyChanged
-    {
-        public string Date { get; set; }
+    {   
+        public int Index { get; set; }
+        
         private string libele;
         public string Libele {
             get { return this.libele; }
@@ -23,6 +24,7 @@ namespace MGA.WindowsApps.Comptabilite
                 }
             }
         }
+
         private int montant;
         public int Montant {
             get { return this.montant; }
@@ -36,14 +38,20 @@ namespace MGA.WindowsApps.Comptabilite
             }
         }
 
-        public int Index { get; set; }
+        public string Date { get; set; }
 
-        public Operation(string libele, int montant, int index)
+        public string Color { get; set; }
+
+        public string Foreground { get; set; }
+
+        public Operation(int index, string libele, int montant, string date)
         {
-            Date = DateTime.Now.ToString("dd MMMM yyyy :");
+            Index = index;
             Libele = libele;
             Montant = montant;
-            Index = index;
+            Date = date;
+            Color = (montant >= 0) ? "LightGreen" : "Pink";
+            Foreground = (Color == "LightGreen") ? "Green" : "Red";
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

@@ -8,6 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/apps/comptabilite/icons8-rechercher-dans-la-liste-100.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/apps/comptabilite/icons8-editer-le-fichier-100%20(1).png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/apps/comptabilite/icons8-effacer-100.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/apps/comptabilite/icons8-plus-100%20(2).png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/apps/comptabilite/icons8-rechercher-dans-la-liste-100%20(1).png")]
 
 

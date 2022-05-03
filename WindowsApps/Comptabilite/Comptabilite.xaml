@@ -6,17 +6,24 @@
         xmlns:local="clr-namespace:MGA.WindowsApps.Comptabilite"
         xmlns:uc="clr-namespace:MGA.UserControls"
         mc:Ignorable="d"
-        Title="Comptabilite" Height="450" Width="800"
-        WindowStyle="None">
-    <Grid MouseDown="dragmove">
+        Title="Comptabilite" 
+        Height="700" Width="1200"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        ResizeMode="CanResizeWithGrip" SizeToContent="WidthAndHeight" Name="WindowComptabilite">
+
+    <Grid MouseDown="DragMove">
         <Grid.RowDefinitions>
-            <RowDefinition Height="5*" MaxHeight="50" MinHeight="50" />
-            <RowDefinition Height="95*" />
+            <RowDefinition Height="60" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <uc:NavBar />
-        <StackPanel Orientation="Horizontal">
+        
+        <uc:NavBar Background="#95190C" Grid.Row="0"/>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0">
             <Button
-                Background="{Binding}"
+                BorderThickness="0"
+                Background="Transparent"
                 HorizontalAlignment="Left"
                 Click="Btn_Menu"
                 >
@@ -33,81 +40,147 @@
                 Comptabilite
             </TextBlock>
         </StackPanel>
-        <Grid Grid.Row="1" Margin="10">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="90*" />
-                <RowDefinition Height="10*" />
-            </Grid.RowDefinitions>
-            <ListBox Name="lbOperations" BorderThickness="1">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock 
-                                VerticalAlignment="Center"
-                                Width="120"
-                                HorizontalAlignment="Left"
-                                Margin="0,0,15,0"
-                                FontSize="13"
-                                FontWeight="Bold"
-                                Text="{Binding Date}" />
-                            <TextBlock 
-                                VerticalAlignment="Center"
-                                Width="150"
-                                HorizontalAlignment="Left"
-                                Margin="0,0,15,0"
-                                FontSize="13"
-                                FontWeight="Bold"
-                                Text="{Binding Libele}" />
-                            <TextBlock 
-                                VerticalAlignment="Center"
-                                Width="50"
-                                HorizontalAlignment="Left"
-                                Margin="0,0,15,0"
-                                FontSize="13"
-                                FontWeight="Bold"
-                                Text="{Binding Montant}" />
-                        </StackPanel>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-            <StackPanel 
-                Grid.Row="1" 
-                HorizontalAlignment="Center" VerticalAlignment="Bottom" 
-                Orientation="Horizontal">
-                <Button
-                    BorderThickness="0"
-                    Width="25" Height="25"
-                    Margin="10,0,10,0"
-                    Click="SearchOperation"
-                    Background="{Binding}">
-                    <Image Source="/Images/Apps/Comptabilite/Recherche.png" />
-                </Button>
-                <Button
-                    BorderThickness="0"
-                    Width="25" Height="25"
-                    Margin="10,0,10,0"
-                    Click="EditOperation"
-                    Background="{Binding}">
-                    <Image Source="/Images/Apps/Comptabilite/Editer.png" />
-                </Button>
-                <Button
-                    BorderThickness="0"
-                    Width="35" Height="35"
-                    Margin="10,0,10,0"
-                    Click="AddOperation"
-                    Background="{Binding}">
-                    <Image Source="/Images/UC/Operations/Plus.png" />
-                </Button>
-                <Button
-                    Name="DeleteButton"                
-                    BorderThickness="0" 
-                    Width="25" Height="25" 
-                    Margin="10,0,10,0"
-                    Click="DeleteOperation"
-                    Background="{Binding}">
-                    <Image Source="/Images/Apps/Comptabilite/Supprimer.png" />
-                </Button>
-            </StackPanel>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" MinWidth="315" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="65" />
+                </Grid.RowDefinitions>
+
+                <ListBox Grid.Row="0"
+                    Name="lbOperations" 
+                    Margin="15"
+                    BorderThickness="0,1,0,0" 
+                    BorderBrush="#95190C" 
+                    ScrollViewer.VerticalScrollBarVisibility="Disabled" 
+                    HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Border CornerRadius="10" Margin="0,5,0,5">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                        <GradientStop Color="{Binding Color}" Offset="0" />
+                                        <GradientStop Color="FloralWhite" Offset="1" />
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <StackPanel Orientation="Horizontal" Margin="10,5,10,5">
+                                    <TextBlock 
+                                    VerticalAlignment="Center"
+                                    Width="140"
+                                    HorizontalAlignment="Left"
+                                    FontSize="20"
+                                    FontWeight="Bold"
+                                    Foreground="{Binding Foreground}"
+                                    Text="{Binding Date}" />
+                                    <TextBlock 
+                                    VerticalAlignment="Center"
+                                    Width="150"
+                                    HorizontalAlignment="Left"
+                                    FontSize="20"
+                                    FontWeight="Bold"
+                                    Foreground="{Binding Foreground}"
+                                    Text="{Binding Libele}" />
+                                    <TextBlock 
+                                    VerticalAlignment="Center"
+                                    Width="50"
+                                    HorizontalAlignment="Left"
+                                    FontSize="20"
+                                    FontWeight="Bold"
+                                    Foreground="{Binding Foreground}"
+                                    Text="{Binding Montant}" />
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+
+                <Border Grid.Row="1"
+                    Margin="0,0,0,15"
+                    Background="Red"
+                    CornerRadius="10" 
+                    BorderThickness="0,0,5,5"
+                    BorderBrush="Gold"
+                    HorizontalAlignment="Center">
+                    
+                    <StackPanel 
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Center" VerticalAlignment="Center">
+                        
+                        <Button
+                        BorderThickness="0"
+                        Width="25" Height="25"
+                        Margin="10,0,10,0"
+                        Click="SearchOperation"
+                        Background="Transparent">
+                            
+                            <Image Source="/Images/Apps/Comptabilite/Recherche.png" />
+                            
+                        </Button>
+
+                        <Button
+                            BorderThickness="0"
+                            Width="25" Height="25"
+                            Margin="10,0,10,0"
+                            Click="EditOperation"
+                            Background="Transparent">
+                            
+                            <Image Source="/Images/Apps/Comptabilite/Editer.png" />
+                            
+                        </Button>
+
+                        <Button
+                            BorderThickness="0"
+                            Width="35" Height="35"
+                            Margin="10,0,10,0"
+                            Click="AddOperation"
+                            Background="Transparent">
+                            
+                            <Image Source="/Images/Apps/Comptabilite/Plus.png" />
+                            
+                        </Button>
+
+                        <Button
+                            Name="DeleteButton"                
+                            BorderThickness="0" 
+                            Width="25" Height="25" 
+                            Margin="10,0,10,0"
+                            Click="DeleteOperation"
+                            Background="Transparent">
+                            
+                            <Image Source="/Images/Apps/Comptabilite/Supprimer.png" />
+                            
+                        </Button>
+
+                        <Border CornerRadius="15,0,15,0" Background="LightGoldenrodYellow" Margin="5">
+                            <TextBlock
+                                Name="Montant"
+                                Foreground="Goldenrod"
+                                FontSize="20"
+                                FontWeight="Bold" Text="300" Padding="15" VerticalAlignment="Center"/>
+                        </Border>
+
+                    </StackPanel>
+                    
+                </Border>
+                
+            </Grid>
+
+            <Grid Grid.Column="1" Name="GridGraphique"
+                  Width="600" Height="500"
+                  Margin="15" />
+
+            
+
+            
+
+
         </Grid>
+        
     </Grid>
 </Window>

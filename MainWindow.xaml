@@ -7,21 +7,33 @@
         xmlns:uc="clr-namespace:MGA.UserControls"
         mc:Ignorable="d"
         Title="MGA" Height="450" Width="800"
-        WindowStyle="None">
+        WindowStyle="None" 
+        ResizeMode="NoResize">
     <Grid MouseDown="dragmove">
         <Grid.RowDefinitions>
-            <RowDefinition Height="5*" MaxHeight="50" MinHeight="50" />
-            <RowDefinition Height="95*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="90*" />
         </Grid.RowDefinitions>
-        <uc:NavBar />
-        <Button
-            Background="{Binding}"
-            HorizontalAlignment="Left"
-            >
-            <Image Source="/Images/Bar/Menu.png"
-                   Width="25" Height="25"  
-                   Margin="10,0,0,0" />
-        </Button>
+        <uc:NavBar Background="Pink" />
+        <StackPanel Orientation="Horizontal">
+            <Button
+                BorderThickness="0"
+                Background="Transparent"
+                HorizontalAlignment="Left">
+                <Image 
+                    Source="/Images/Bar/Menu.png"
+                    Width="25" Height="50"  
+                    Margin="10,0,10,0" />
+            </Button>
+            <TextBlock
+                    Foreground="White"
+                    VerticalAlignment="Center"
+                    FontWeight="Bold"
+                    FontSize="15"
+                    FontStyle="Italic">
+                    MGA
+            </TextBlock>
+        </StackPanel>
         <Grid Grid.Row="1" Margin="30">
             <Grid.RowDefinitions>
                 <RowDefinition Height="50*" />

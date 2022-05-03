@@ -24,7 +24,6 @@ namespace MGA.UserControls
         {
             InitializeComponent();
         }
-        public string SrcOptionImg { get; set; }
 
         private void Click_Reduire(object sender, RoutedEventArgs e)
         {
